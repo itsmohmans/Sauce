@@ -174,7 +174,7 @@ async function getCurrentTabUrl() {
 function main() {
   const el = document.getElementById("myHeading");
   const buttonElement = document.getElementById("refresh-sauce-button");
-  const ingredientsApiUrl = "http://localhost:8000";
+  const ingredientsApiUrl = "https://ingredients.tech/api";
   el.addEventListener("click", () => getSauce(ingredientsApiUrl));
   buttonElement.addEventListener("click", () => getSauce(ingredientsApiUrl));
   window.addEventListener("load", async () => {

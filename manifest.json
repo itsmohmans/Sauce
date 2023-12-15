@@ -10,14 +10,7 @@
     "default_icon": {
       "64": "icons/icon.png"
     },
-    "default_popup": "browserAction/index.html",
-    "default_title": "sauce"
-  },
-  "page_action": {
-    "default_icon": {
-      "64": "icons/icon.png"
-    },
-    "default_popup": "pageAction/index.html",
+    "default_popup": "index.html",
     "default_title": "sauce"
   },
   "permissions": ["<all_urls>", "tabs"]

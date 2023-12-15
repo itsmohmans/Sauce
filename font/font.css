@@ -3,7 +3,7 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url("../font/IBMPlexSans-Regular.ttf");
+    src: url("./IBMPlexSans-Regular.ttf");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    src: url("../font/IBMPlexSans-Medium.ttf");
+    src: url("./IBMPlexSans-Medium.ttf");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url("../font/IBMPlexSans-Bold.ttf");
+    src: url("./IBMPlexSans-Bold.ttf");
 }
 
 @font-face {
@@ -27,5 +27,5 @@
     font-weight: 400;
     font-style: italic;
     font-display: swap;
-    src: url("../font/IBMPlexSans-Italic.ttf");
+    src: url("./IBMPlexSans-Italic.ttf");
 }
