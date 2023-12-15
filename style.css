@@ -1,15 +1,16 @@
 :root {
   /* TODO: change the color palette */
-  --primary: #20DB8F;
-  --accent: #C7F9CC;
-  --primary-dark: #22577A;
-  --primary-medium: #38A3A5;
-  --secondary-light: #80ED99;
-  --secondary-dark: #57CC99;
+  --primary: #20db8f;
+  --accent: #efefef;
+  --primary-dark: #121212;
+  --primary-medium: #38a3a5;
+  --secondary-light: #80ed99;
+  --secondary-dark: #57cc99;
 }
 
 * {
-  font-family: 'IBM Plex Sans';}
+  font-family: "IBM Plex Sans";
+}
 
 body {
   background-color: var(--primary-dark);
@@ -57,19 +58,28 @@ button:hover {
   padding: 4px;
 }
 
-#sauce .column, #sauce .row {
+#sauce .column,
+#sauce .row {
   display: flex;
   gap: 4px;
 }
 .column {
   flex-direction: column;
 }
-.row { 
+.row {
   flex-direction: row;
 }
 .sauce-icon {
-  width: 28px;
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background-color: white;
+  display: inline;
 }
-.sauce-info .description {
-  display: none;
-} 
+.sauce-name {
+  display: inline;
+  display: flex;
+  justify-content: center;
+}
+.sauce-info {
+}
