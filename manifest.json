@@ -19,5 +19,6 @@
     },
     "default_popup": "pageAction/index.html",
     "default_title": "sauce"
-  }
+  },
+  "permissions": ["<all_urls>", "tabs"]
 }
