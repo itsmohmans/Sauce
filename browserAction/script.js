@@ -148,6 +148,7 @@ class PageData {
  */
 async function getSauce(ingredientsApiUrl) {
   const currentTabUrl = await getCurrentTabUrl();
+  document.getElementById('website-url').innerHTML = currentTabUrl
   return await fetch(`${ingredientsApiUrl}/ingredients?url=${currentTabUrl}`)
     .then((res) => res.json())
     .then(
