@@ -1,19 +1,19 @@
 :root {
+  --primary: #20DB8F;
+  --accent: #C7F9CC;
   --primary-dark: #22577A;
   --primary-medium: #38A3A5;
   --secondary-light: #80ED99;
   --secondary-dark: #57CC99;
-  --accent: #C7F9CC;
 }
 
 * {
-  font-family: sans-serif
-}
+  font-family: 'IBM Plex Sans';}
 
 body {
   background-color: var(--primary-dark);
   color: var(--secondary-light);
-  width: 300px;
+  width: 400px;
   padding: 8px;
 }
 
@@ -27,6 +27,7 @@ button {
   border-radius: 4px;
   width: 5rem;
   height: 2rem;
+  margin: 0 20px;
 }
 button:hover {
   background-color: var(--primary-medium);
@@ -35,8 +36,7 @@ button:hover {
 
 #website-url {
   width: max-content;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   color: var(--accent);
   font-weight: 600;
   font-size: 1.4rem;
