@@ -2,27 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="font.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="content">
-      <div id="website-url"></div>
+      <h2 id="website-url"></h2>
       <div id="sauce">
-        <!-- Loop over the object keys of `matches` -->
-        <div class="security-sauce row">
-          <!-- Loop over items of the array in each property -->
-          <div class="sauce-single" >
-            <i class="sauce-icon">icon</i> 
+        <!-- Loop over the categories -->
+        <!-- class of the category: "{category-name}-sauce" -->
+        <div class="security-sauce column">
+          <h3 class="sauce-category-title">Security</h3>
+          <!-- Loop over items of the array in each category -->
+          <div class="sauce-single row" >
+            <img class="sauce-icon" src="{service icon url}" alt="{name}-icon" /> 
             <div class="sauce-info column">
-              <div class="name">Sauce Name</div>
+              <div class="name">{Name of the service}</div>
+              <!-- TODO: display description on hover or on click -->
               <div class="description">
-                HSTS (HTTP Strict Transport Security) is a security mechanism that forces browsers to only connect to a website over HTTPS.
+                {Description of the service}
               </div>
             </div>
           </div>
         </div>
       </div>
       <button id="refresh-sauce-button">Refresh</button>
+
+      <!-- TODO: delete this after we're done rendereing the layout -->
+      <div id="myHeading" style="display: none;"></div>
     </div>
     <script src="script.js"></script>
   </body>
