@@ -1,3 +1,19 @@
-h1 {
-  font-style: italic;
+:root {
+  --primary-dark: #001524;
+  --primary-medium: #15616D;
+  --secondary-light: #FFECD1;
+  --secondary-dark: #D8C0A9;
+  --accent: #FF7D00;
+  --accent-dark: #78290F;
+}
+
+* {
+  font-family: sans-serif
+}
+
+body {
+  background-color: var(--primary-dark);
+  color: var(--secondary-light);
+  width: 300px;
+  padding: 8px;
 }
