@@ -142,13 +142,15 @@ class PageData {
   }
 }
 
+const ingredientsApiUrl = "http://localhost:8000";
+
 /**
  * @param {string} ingredientsApiUrl
  * returns{Promise<PageData>}
  */
 async function getSauce(ingredientsApiUrl) {
   const currentTabUrl = await getCurrentTabUrl();
-  document.getElementById('website-url').innerHTML = currentTabUrl
+  document.getElementById("website-url").innerHTML = currentTabUrl;
   return await fetch(`${ingredientsApiUrl}/ingredients?url=${currentTabUrl}`)
     .then((res) => res.json())
     .then(
@@ -171,14 +173,62 @@ async function getCurrentTabUrl() {
     }, console.error);
 }
 
+/**
+ * @param {string} groupName
+ * @param {Ingredient[]} technologies
+ * @returns{string}
+ */
+function renderIngredientGroup(groupName, technologies) {
+  let outPreIngredients = `<div class="security-sauce column">
+  <h3 class="sauce-category-title">${groupName}</h3>`;
+  let ingredients = "";
+  for (const technology of technologies) {
+    ingredients += `<div class="security-sauce column">
+  <div class="sauce-single row">
+    <img
+      class="sauce-icon"
+      src="${ingredientsApiUrl}${technology.icon}"
+      alt="{name}-icon"
+    />
+    <div class="sauce-info column">
+      <div class="sauce-name">${technology.name}</div>
+    </div>
+  </div>
+</div>`;
+  }
+  let outPostIngredients = `</div>`;
+
+  return `${outPreIngredients}${ingredients}${outPostIngredients}`;
+}
+
+/**
+ * @param {PageData} pageData
+ */
+function renderIngredientsContainer(pageData) {
+  let outPre = `<div id="sauce">`;
+  let categories = ``;
+  const ingredientsKeys = Object.keys(pageData.ingredients);
+  for (const key of ingredientsKeys) {
+    if (!pageData.ingredients[key]) {
+      continue;
+    }
+    categories += renderIngredientGroup(key, pageData.ingredients[key]);
+  }
+  let outPost = `</div>`;
+  return `${outPre}${categories}${outPost}`;
+}
+
 function main() {
-  const el = document.getElementById("myHeading");
-  const buttonElement = document.getElementById("refresh-sauce-button");
-  const ingredientsApiUrl = "https://ingredients.tech/api";
-  el.addEventListener("click", () => getSauce(ingredientsApiUrl));
-  buttonElement.addEventListener("click", () => getSauce(ingredientsApiUrl));
+  const refreshButtonElement = document.getElementById("refresh-sauce-button");
+  const sauceElement = document.getElementById("sauce");
+
+  refreshButtonElement.addEventListener("click", () =>
+    getSauce(ingredientsApiUrl),
+  );
+
   window.addEventListener("load", async () => {
-    el.innerHTML = JSON.stringify(await getSauce(ingredientsApiUrl));
+    const sauce = await getSauce(ingredientsApiUrl);
+    sauceElement.innerHTML = renderIngredientsContainer(sauce); // renderIngredientGroup(
   });
 }
 
