@@ -1,10 +1,9 @@
 :root {
-  --primary-dark: #001524;
-  --primary-medium: #15616D;
-  --secondary-light: #FFECD1;
-  --secondary-dark: #D8C0A9;
-  --accent: #FF7D00;
-  --accent-dark: #78290F;
+  --primary-dark: #22577A;
+  --primary-medium: #38A3A5;
+  --secondary-light: #80ED99;
+  --secondary-dark: #57CC99;
+  --accent: #C7F9CC;
 }
 
 * {
