@@ -83,3 +83,104 @@ button:hover {
 }
 .sauce-info {
 }
+
+#saucing.show{
+  display: block;
+}
+#saucing.hide{
+  display: none;
+}
+/* Saucing animation */
+@keyframes loader {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(2px, -15px) rotate(-2deg);
+    width: 32%;
+  }
+  50% {
+    transform: translate(6px, -50px) rotate(15deg);
+    width: 35%;
+    border-bottom-width: 6px;
+    border-radius: 7%;
+  }
+  90% {
+    transform: translate(2px, -15px) rotate(-2deg);
+    width: 32%;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+@keyframes pan {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  10% {
+    transform: rotate(-2deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes shadow {
+  0% {
+    width: 30%;
+  }
+  50% {
+    width: 40%;
+    left: 20px;
+  }
+  100% {
+    width: 30%;
+  }
+}
+.pan-loader {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+.loader {
+  position: relative;
+  top: 10%; right: -10%;
+  z-index: -1;
+  width: 30%; height: 45%;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #ff2f2f;
+  border-radius: 10%;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+.pan-container {
+  display: flex; width: 100%;
+  animation: pan 2s infinite;
+  animation-timing-function: linear;
+}
+.pan {
+  width: 60%; height: 20px;
+  background: linear-gradient(#888, #222);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.handle {
+  width: 40%; height: 10px;
+  background: linear-gradient(#888, #222);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.shadow {
+  position: relative;
+  top: 15%; left: 15%;
+  width: 30%; height: 8px;
+  background: lightgray;
+  border-radius: 20px;
+  animation: shadow 2s infinite;
+}
