@@ -149,8 +149,11 @@ const ingredientsApiUrl = "http://localhost:8000";
  * returns{Promise<PageData>}
  */
 async function getSauce(ingredientsApiUrl) {
-  const loader = document.getElementById('saucing')
+  const
+    loader = document.getElementById('saucing'),
+    mainContent = document.getElementsByClassName('content').item(0)
   loader.className = 'pan-loader show'
+  mainContent.className = 'content hide';
   const currentTabUrl = await getCurrentTabUrl();
   document.getElementById("website-url").innerHTML = currentTabUrl;
   return await fetch(`${ingredientsApiUrl}/ingredients?url=${currentTabUrl}`)
@@ -158,7 +161,11 @@ async function getSauce(ingredientsApiUrl) {
     .then(
       (data) => new PageData(data.url, data.matching_ingredients, data.matches),
       console.error,
-    ).finally(() => loader.className = 'hide');
+    ).finally(() => {
+        loader.className = 'hide';
+        mainContent.className = 'content show';
+      }
+    );
 }
 
 /**

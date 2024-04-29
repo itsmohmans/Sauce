@@ -84,10 +84,10 @@ button:hover {
 .sauce-info {
 }
 
-#saucing.show{
+.show{
   display: block;
 }
-#saucing.hide{
+.hide{
   display: none;
 }
 /* Saucing animation */
