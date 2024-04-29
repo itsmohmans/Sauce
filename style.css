@@ -159,12 +159,12 @@ button:hover {
   border: 10px solid transparent;
   border-bottom: 10px solid #ff2f2f;
   border-radius: 10%;
-  animation: loader 2s infinite;
+  animation: loader 1.5s infinite;
   animation-timing-function: linear;
 }
 .pan-container {
   display: flex; width: 100%;
-  animation: pan 2s infinite;
+  animation: pan 1.5s infinite;
   animation-timing-function: linear;
 }
 .pan {
