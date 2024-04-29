@@ -1,8 +1,8 @@
 :root {
-  /* TODO: change the color palette */
+  /* TODO: change the color palette, also why tf do we need all of these colors?!! */
   --primary: #20db8f;
   --accent: #efefef;
-  --primary-dark: #121212;
+  --primary-dark: #302e34;
   --primary-medium: #38a3a5;
   --secondary-light: #80ed99;
   --secondary-dark: #57cc99;
@@ -39,6 +39,7 @@ button:hover {
 #website-url {
   width: max-content;
   margin: 0 auto;
+  margin-top: 4px;
   color: var(--accent);
   font-weight: 600;
   font-size: 1.4rem;
@@ -47,15 +48,16 @@ button:hover {
 #sauce {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
+  row-gap: 5px;
   padding: 4px;
-  margin: 16px;
+  margin: 10px;
+  margin-top: 2px;
 }
 #sauce > div[class*="-sauce"]:not(:last-child) {
   border-bottom: 1px solid var(--primary-medium);
 }
 #sauce > div[class*="-sauce"] {
-  padding: 4px;
+  padding: 10px;
 }
 
 #sauce .column,
@@ -68,13 +70,16 @@ button:hover {
 }
 .row {
   flex-direction: row;
+  align-items: center;
 }
 .sauce-icon {
   width: 30px;
+  height: 30px;
   border: 1px solid white;
   border-radius: 100%;
   background-color: white;
-  display: inline;
+  object-fit: contain;
+  margin: 2px;
 }
 .sauce-name {
   display: inline;
