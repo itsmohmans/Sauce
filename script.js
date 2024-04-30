@@ -148,15 +148,21 @@ const ingredientsApiUrl = "http://localhost:8000";
  * @param {string} ingredientsApiUrl
  * returns{Promise<PageData>}
  */
-async function getSauce(ingredientsApiUrl) {
+async function getSauce(ingredientsApiUrl, cached = true) {
   const
     loader = document.getElementById('saucing'),
     mainContent = document.getElementsByClassName('content').item(0)
   loader.className = 'pan-loader show'
   mainContent.className = 'content hide';
+  
+  // TODO: validate current tab url first
   const currentTabUrl = await getCurrentTabUrl();
+
   document.getElementById("website-url").innerHTML = currentTabUrl;
-  return await fetch(`${ingredientsApiUrl}/ingredients?url=${currentTabUrl}`)
+  return await fetch(
+    `${ingredientsApiUrl}/ingredients?url=${currentTabUrl}`,
+    { cache: cached ? 'force-cache' : 'reload' }
+  )
     .then((res) => res.json())
     .then(
       (data) => new PageData(data.url, data.matching_ingredients, data.matches),
@@ -232,7 +238,7 @@ function main() {
   const sauceElement = document.getElementById("sauce");
 
   refreshButtonElement.addEventListener("click", () =>
-    getSauce(ingredientsApiUrl),
+    getSauce(ingredientsApiUrl, false),
   );
 
   window.addEventListener("load", async () => {
